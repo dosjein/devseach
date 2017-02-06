@@ -8,6 +8,8 @@ use Clusterpoint\Client;
 
 use App\Models\Persons;
 
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -34,6 +36,13 @@ class HomeController extends Controller
     public function developers(Request $request){
 
         $allRequests = $request->all();
+
+	DB::table('dev_search_logs')->insert(
+		array(
+            		'ip' => $request->ip()
+            		'params' => json_encode($allRequests)
+		)
+	);
 
         $cp = new Client(); 
 
