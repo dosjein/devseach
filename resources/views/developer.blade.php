@@ -25,7 +25,7 @@
                           <td>{{$dev->email}}</td>
                           <td><a target="_blank" href="https://bitbucket.org/{{$dev->bitbucket->username}}">{{$dev->bitbucket->username}}</a></td>
 			 <td>
-				@foreach($dev->bitbucket->repozitories as $rep)
+				@foreach($dev->bitbucket->repositories as $rep)
 					{{$rep->language}} 
 				@endforeach
 			</td>
