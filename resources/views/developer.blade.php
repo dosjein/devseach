@@ -14,6 +14,7 @@
                         <th>Full name</th>
                         <th>Email</th>
                         <th>BitBucket</th>
+			<th>Skills</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -23,6 +24,7 @@
                           <td>{{$dev->full_name}}</td>
                           <td>{{$dev->email}}</td>
                           <td><a target="_blank" href="https://bitbucket.org/{{$dev->bitbucket->username}}">{{$dev->bitbucket->username}}</a></td>
+			 <td>{{var_dump($dev->bitbucket)}}</td>
                         </tr>
                       @endforeach
 
