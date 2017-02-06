@@ -25,9 +25,16 @@
                           <td>{{$dev->email}}</td>
                           <td><a target="_blank" href="https://bitbucket.org/{{$dev->bitbucket->username}}">{{$dev->bitbucket->username}}</a></td>
 			 <td>
-				@foreach(json_decode($dev->bitbucket->repozitories , true) as $rep)
-					{{$rep['language']}} 
-				@endforeach
+
+				<?php $repList = json_decode($dev->bitbucket->repozitories , true); $langList = array(); ?>
+
+				@if (is_array($repList))
+					@foreach($repList as $rep)
+						<?php $langList[$rep['language']] = $rep['language'] ; ?>
+					@endforeach
+
+					{{implode($langList , ',')}}
+				@endif
 			</td>
                         </tr>
                       @endforeach
