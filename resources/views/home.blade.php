@@ -9,11 +9,12 @@
                 <div class="panel-body">
                 <form method="POST">
                      {{ csrf_field() }}
-                      <div class="form-group">
+                     <!-- <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We will give this to each random person we will meet on a street.</small>
                       </div>
+		    -->
 
                       <div class="form-group">
                         <label for="SkillBlock">Skill</label>

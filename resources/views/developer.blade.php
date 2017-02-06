@@ -14,6 +14,7 @@
                         <th>Full name</th>
                         <th>Email</th>
                         <th>BitBucket</th>
+			<th>Skills</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -23,6 +24,18 @@
                           <td>{{$dev->full_name}}</td>
                           <td>{{$dev->email}}</td>
                           <td><a target="_blank" href="https://bitbucket.org/{{$dev->bitbucket->username}}">{{$dev->bitbucket->username}}</a></td>
+			 <td>
+
+				<?php $repList = json_decode($dev->bitbucket->repozitories , true); $langList = array(); ?>
+
+				@if (is_array($repList))
+					@foreach($repList as $rep)
+						<?php $langList[$rep['language']] = $rep['language'] ; ?>
+					@endforeach
+
+					{{implode($langList , ',')}}
+				@endif
+			</td>
                         </tr>
                       @endforeach
 
