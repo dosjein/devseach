@@ -39,7 +39,7 @@ class HomeController extends Controller
 
 	DB::table('dev_search_logs')->insert(
 		array(
-            		'ip' => $request->ip()
+            		'ip' => $request->ip(),
             		'params' => json_encode($allRequests)
 		)
 	);
